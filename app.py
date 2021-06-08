@@ -27,7 +27,9 @@ login_manager.login_view = 'login'
 # Association Table
 enrolled_classes = db.Table('enrolled_classes',
     db.Column("user_id", db.Integer, db.ForeignKey("users.id")),
-    db.Column("class_id", db.Integer, db.ForeignKey("classes.id")))
+    db.Column("class_id", db.Integer, db.ForeignKey("classes.id")),
+    db.PrimaryKeyConstraint('user_id', 'class_id')
+    )
 
 
 class Users(UserMixin, db.Model):
@@ -137,9 +139,13 @@ def enlist_class():
     class_code = request.args.get('code', '')
     chosen_class = Classes.query.filter_by(class_code=class_code).first()
     if chosen_class:
-        chosen_class.slots_available -= 1
-        chosen_class.enrolled.append(current_user)
-        db.session.commit()
+        try:
+            chosen_class.enrolled.append(current_user)
+            chosen_class.slots_available -= 1
+            db.session.commit()
+            flash("Successfully Enlisted!")
+        except:
+            flash("Already Enlisted in this class!")
     return redirect("homepage")
 
 

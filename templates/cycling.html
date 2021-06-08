@@ -19,7 +19,7 @@
         <td>{{ class.slots_available}}</td>
         <td>{{ class.price}}</td>
         <td>
-            <button type="submit">Sign Up in Class</button>
+            <a href="/enlistclass?code={{ class.class_code }}">Enlist in Class</a>
         </td>
     </tr>
     {% endfor %}

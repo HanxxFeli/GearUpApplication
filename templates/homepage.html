@@ -21,7 +21,11 @@
 </head>
 
 <body>
-
+  {% for message in get_flashed_messages() %}
+  <div class="success">
+    <h5> {{ message }} </h5>
+  </div>
+  {% endfor %}
   <table class="center" , style="width:500px">
     <tr>
       <td><a href="/rowingclasses">Rowing Classes</a></td>
