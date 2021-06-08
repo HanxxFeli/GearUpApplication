@@ -147,7 +147,11 @@ def enlist_class():
 @login_required
 def user_enrolled():
     enrolled_classes = current_user.enrolled
-    return render_template("userenrolled.html", enrolled_classes=enrolled_classes)
+    payment_total = 0
+    for classs in enrolled_classes:
+        payment_total += int(classs.price) 
+
+    return render_template("userenrolled.html", enrolled_classes=enrolled_classes, payment_total=payment_total)
 
 
 @app.route('/logout')
