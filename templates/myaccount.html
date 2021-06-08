@@ -1,0 +1,29 @@
+<html>
+{% include "header.html" %}
+{% block content %}
+<table class="center" , style="width:500px">
+
+    <tr>
+        <td>First Name</td>
+        <td>{{ user_details.first_name }}</td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>{{ user_details.last_name }}</td>
+    </tr>
+    <tr>
+        <td>Email Address</td>
+        <td>{{ user_details.email }}</td>
+    </tr>
+    <tr>
+        <td>Mode of Payment</td>
+        <td>{{ user_details.payment_method }}</td>
+    </tr>
+    <tr>
+        <td><a href="/changepassword">Change Password</a></td>
+    </tr>
+</table>
+{% include "footer.html" %}
+{% endblock %}
+
+</html>

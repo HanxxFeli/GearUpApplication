@@ -1,0 +1,23 @@
+<html>
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<h1>Login</h1>
+<form method="POST" action="/login">
+  {% for message in get_flashed_messages() %}
+  <div class="error">
+    <h5> {{ message }} </h5>
+  </div>
+  {% endfor %}
+  {{ form.hidden_tag() }}
+  <div>
+    {{ wtf.form_field(form.username) }}
+    {{ wtf.form_field(form.password) }}
+  </div>
+  <div>
+    <button type="submit">Login</button>
+  </div>
+</form>
+{% include "footer.html" %}
+
+</html>

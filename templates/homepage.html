@@ -1,0 +1,42 @@
+<html>
+{% extends "header.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h1>Welcome, {{ name }}!</h1>
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border-collapse: separate;
+      border-spacing: 10px;
+    }
+
+    table.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table class="center" , style="width:500px">
+    <tr>
+      <td><a href="/rowingclasses">Rowing Classes</a></td>
+    </tr>
+    <tr>
+      <td><a href="/cyclingclasses">Cycling Classes</a></td>
+    </tr>
+    <tr>
+      <td><a href="/strengthclasses">Strength Classes</a></td>
+    </tr>
+    <tr>
+      <td><a href="/enduranceclasses">Endurance Classes</a></td>
+    </tr>
+  </table>
+
+  {% endblock %}
+
+</html>
