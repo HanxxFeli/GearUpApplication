@@ -154,8 +154,11 @@ def enlist_class():
 def user_enrolled():
     enrolled_classes = current_user.enrolled
     payment_total = 0
-    for classs in enrolled_classes:
-        payment_total += int(classs.price) 
+    if not enrolled_classes:
+        flash("No Classes Enrolled!")
+    else:
+        for classs in enrolled_classes:
+            payment_total += int(classs.price) 
 
     return render_template("userenrolled.html", enrolled_classes=enrolled_classes, payment_total=payment_total)
 
@@ -164,6 +167,7 @@ def user_enrolled():
 @login_required
 def logout():
     logout_user()
+    flash("Successfully Logged out!")
     return redirect(url_for("index"))
 
 

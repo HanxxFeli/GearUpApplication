@@ -1,6 +1,13 @@
 <html>
 {% include "header.html" %}
-<h1>Homepage</h1>
+<h1>Welcome to GearUp!</h1>
+
+{% for message in get_flashed_messages() %}
+<div class="error">
+    <h5> {{ message }} </h5>
+</div>
+{% endfor %}
+
 {% include "footer.html" %}
 
 </html>
