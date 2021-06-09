@@ -100,10 +100,13 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/contactus")
-def contactus():
-    return render_template("contactus.html")
+@app.route("/contactus1")
+def contactus1():
+    return render_template("contactus1.html")
 
+@app.route("/contactus2")
+def contactus2():
+    return render_template("contactus2.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

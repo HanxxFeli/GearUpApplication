@@ -1,28 +1,29 @@
 <html>
-{% include "header.html" %}
+{% include "header1.html" %}
 {% block content %}
-<table class="center" , style="width:500px">
-
+<div class="tablebg">
+<table class="table table-light table-striped", style="width:1000px">
     <tr>
-        <td>First Name</td>
-        <td>{{ user_details.first_name }}</td>
+        <td class="title is-3">First Name</td>
+        <td class="title is-3">{{ user_details.first_name }}</td>
     </tr>
     <tr>
-        <td>Last Name</td>
-        <td>{{ user_details.last_name }}</td>
+        <td class="title is-3">Last Name</td>
+        <td class="title is-3">{{ user_details.last_name }}</td>
     </tr>
     <tr>
-        <td>Email Address</td>
-        <td>{{ user_details.email }}</td>
+        <td class="title is-3">Email Address</td>
+        <td class="title is-3">{{ user_details.email }}</td>
     </tr>
     <tr>
-        <td>Mode of Payment</td>
-        <td>{{ user_details.payment_method }}</td>
+        <td class="title is-3">Mode of Payment</td>
+        <td class="title is-3">{{ user_details.payment_method }}</td>
     </tr>
     <tr>
-        <td><a href="/changepassword">Change Password</a></td>
+        <td class="title is-5"><a href="/changepassword">Change Password</a></td>
     </tr>
 </table>
+</div>
 {% include "footer.html" %}
 {% endblock %}
 
